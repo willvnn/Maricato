@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Maricato – Desenvolvimento Web</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body, html{height:100%;font-family:Arial,sans-serif;color:#333;}
+  header{position:fixed;top:0;left:0;width:100%;background:#111;box-shadow:0 2px 4px rgba(0,0,0,0.1);z-index:1000;}
+  nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:1rem;}
+  nav a{color:#fff;text-decoration:none;margin:0 1rem;transition:color .3s;}
+  nav a:hover{color:#007bff;}
+  .hero{height:100vh;background:url('home.png') center/cover no-repeat;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:0 1rem;}
+  .hero h1{font-size:3rem;margin-bottom:1rem;text-shadow:0 0 10px #000;}
+  .hero p{font-size:1.2rem;max-width:600px;margin-bottom:2rem;text-shadow:0 0 8px #000;}
+  .hero button{padding:1rem 2rem;font-size:1rem;color:#fff;background:#00d8a8;border:none;border-radius:5px;cursor:pointer;transition:background .3s;}
+  .hero button:hover{background:#007bff;}
+  section{padding:4rem 1rem;max-width:1200px;margin:0 auto;}
+  .services, .portfolio, .testimonials{display:grid;gap:2rem;}
+  .services{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+  .services .card, .portfolio .card{background:#f9f9f9;padding:2rem;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,0.1);text-align:center;}
+  .services .card svg{width:48px;height:48px;fill:#00d8a8;margin-bottom:1rem;}
+  .services .card h3{margin-bottom:.5rem;color:#007bff;}
+  .apresentacao{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));}
+  .testimonials{grid-template-columns:1fr; text-align:center;}
+  .testimonial{padding:2rem;font-style:italic;border-left:4px solid #00d8a8;background:#f1f1f1;border-radius:5px;position:relative;}
+  .testimonial:before{content:'“';font-size:2rem;color:#00d8a8;position:absolute;top:1rem;left:1rem;}
+  .contact-form{display:flex;flex-direction:column;gap:1rem;}
+  .contact-form input, .contact-form textarea{padding:.8rem;border:1px solid #ccc;border-radius:5px;font-size:1rem;}
+  .contact-form button{background:#007bff;color:#fff;padding:.8rem;border:none;border-radius:5px;cursor:pointer;transition:background .3s;}
+  .contact-form button:hover{background:#0056b3;}
+  .logo{width:250px; heigth:40px;}
+  footer{background:#111;color:#fff;text-align:center;padding:2rem 1rem;}
+  @media(min-width:768px){
+	.testimonials{grid-template-columns:repeat(2,1fr);}
+	}
+  @media(max-width:500px){
+	.logo{width:62px; heidth:10px;}
+	}
+</style>
+</head>
+<body>
+<header><nav>
+  <div><a data-target="hero"><img class="logo" src="logo_Maricato.png" /></a></div>
+  <div>
+	<a data-target="apresentacao">Apresentação</a>    
+	<a data-target="services">Serviços</a>
+  <a data-target="testimonials">Depoimentos</a>
+  <a data-target="contact">Contato</a>
+  </div>
+</nav></header>
+<div class="hero" id="hero">
+  <h1>Soluções Web Sob Medida</h1>
+  <p>Desenvolvemos sistemas web modernos, escaláveis e personalizados para transformar o seu negócio.</p>
+  <button onclick="scrollToSection('services')">Conheça nossos serviços</button>
+</div>
+  <section id="apresentacao">
+  <h2>Apresentação</h2>
+  <div class="apresentacao">
+    <br/>
+    <p style="text-align: justify;">Maricato é uma empresa especializada em desenvolvimento web sob medida, com experiência consolidada desde 2008.
+    Ao longo desses anos, temos nos dedicado a criar soluções digitais personalizadas, focadas nas necessidades específicas de cada cliente.
+    <br/>
+    <br/>
+    Nosso compromisso é transformar ideias em sistemas eficientes, modernos e responsivos, sempre com atenção aos detalhes e foco em desempenho, segurança e usabilidade.
+    Atuamos em projetos de diferentes portes, desenvolvendo desde sites institucionais até sistemas complexos de gestão, com tecnologia de ponta e interfaces intuitivas.
+    <br/>
+    <br/>
+    Com uma abordagem próxima e colaborativa, acreditamos que o sucesso de um projeto está na compreensão real dos objetivos de negócio.
+    Por isso, cada solução entregue pela Maricato é única e feita sob medida, com excelência técnica e paixão pelo que fazemos.
+    <br/>
+    <br/>
+    Se você busca um parceiro confiável e experiente para tirar seu projeto do papel ou evoluir seu sistema atual, a Maricato está pronta para ajudar.</p>
+  </div>
+</section>
+
+  <section id="services">
+  <h2>Serviços</h2>
+  <div class="services">
+    <div class="card">
+      <svg viewBox="0 0 24 24"><path d="M3 4h18v2H3V4zm0 4h12v2H3V8zm0 4h18v2H3v-2zm0 4h12v2H3v-2z"/></svg>
+      <h3>Sistemas Personalizados</h3>
+      <p>Plataformas feitas sob medida com foco em eficiência e escalabilidade.</p>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 24 24"><path d="M7 17l4-4-4-4v8zm6-8h2v8h-2V9z"/></svg>
+      <h3>Design Responsivo</h3>
+      <p>Websites adaptáveis que oferecem ótima experiência em qualquer dispositivo.</p>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 24 24"><path d="M6 2h12l2 4H4z"/></svg>
+      <h3>Integração & APIs</h3>
+      <p>Automatização e conexão entre sistemas via APIs.</p>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <h2>Depoimentos</h2>
+  <div class="testimonials">
+    <div class="testimonial">A Maricato entregou um sistema excelente! — Empresa XYZ</div>
+    <div class="testimonial">Altíssimo profissionalismo e rapidez! — Cliente ABC</div>
+  </div>
+</section>
+<section id="contact">
+  <h2>Contato</h2>
+  <form class="contact-form" onsubmit="enviar(event)">
+    <input type="text" placeholder="Seu nome" required>
+    <input type="email" placeholder="Seu e-mail" required>
+    <textarea rows="5" placeholder="Mensagem" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+<footer>&copy; 2025 Maricato – Todos os direitos reservados</footer>
+<script>
+  function enviar(e){
+    e.preventDefault(); alert('Obrigado! Entraremos em contato.');
+    e.target.reset();
+  }
+  const links = document.querySelectorAll('nav a');
+  function scrollToSection(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+  links.forEach(l=>l.onclick=e=>{e.preventDefault();scrollToSection(l.getAttribute('data-target'));});
+</script>
+</body>
+</html>
